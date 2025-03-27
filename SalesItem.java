@@ -11,6 +11,16 @@ import java.util.Iterator;
  * 
  * @author Michael Kölling and David J. Barnes
  * @version 0.1 (2016.02.29)
+ * 
+ * 14. CommentTest, setUp and tearDown.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 public class SalesItem
 {
