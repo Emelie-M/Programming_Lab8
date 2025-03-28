@@ -39,4 +39,46 @@ public class CommentTest
     public void tearDown()
     {
     }
+
+
+    @Test
+    //question 18
+    public void storedCorrectly()
+    {
+        Comment comment1 = new Comment("lucy", "wow", 3);
+        assertEquals("lucy", comment1.getAuthor());
+        assertEquals(3, comment1.getRating());
+    }
+
+    @Test
+    //question 18
+    public void upVoteTest()
+    {
+        Comment comment2 = new Comment("lucy", "wow", 3);
+        assertEquals(0, comment2.getVoteCount());
+        comment2.upvote();
+        comment2.upvote();
+        comment2.upvote();
+        comment2.upvote();
+        comment2.upvote();
+        assertEquals(5, comment2.getVoteCount());
+    }
+
+
+    @Test
+    //question 18
+    public void downVoteTest()
+    {
+        Comment comment1 = new Comment("lucy", "wow", 3);
+        assertEquals(0, comment1.getVoteCount());
+        comment1.downvote();
+        comment1.downvote();
+        comment1.downvote();
+        assertEquals(-3, comment1.getVoteCount());
+    }
 }
+
+
+
+
+

@@ -21,7 +21,6 @@ import java.util.Iterator;
  * 
  * 
  * 
- * 
  */
 public class SalesItem
 {
@@ -126,9 +125,17 @@ public class SalesItem
         System.out.println("Price: " + priceString(price));
         System.out.println();
         System.out.println("Customer comments:");
-        for(Comment comment : comments) {
+        /*for(Comment comment : comments) {
+           System.out.println("-------------------------------------------");
+           System.out.println(comment.getFullDetails());
+        }*/
+        //question 21
+        Iterator<Comment> iterator = comments.iterator();
+        while(iterator.hasNext()){
+            Comment comment = iterator.next();
             System.out.println("-------------------------------------------");
             System.out.println(comment.getFullDetails());
+        
         }
         System.out.println();
         System.out.println("===========================================");

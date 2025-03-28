@@ -94,7 +94,39 @@ public class SalesItemTest
         assertEquals(false, salesIte1.addComment("Ru", "comment", 0));
         assertEquals(false, salesIte1.addComment("Jumanji", "comments", 6));
     }
+
+    @Test
+    //question 19
+    public void mostHelpfulCommentTest()
+    {
+        SalesItem salesIte1 = new SalesItem("cherry", 10);
+        assertEquals(true, salesIte1.addComment("lucy", "meh", 2));
+        salesIte1.upvoteComment(0);
+        salesIte1.upvoteComment(0);
+        assertEquals(true, salesIte1.addComment("me", "very good", 5));
+        salesIte1.upvoteComment(1);
+        salesIte1.upvoteComment(1);
+        salesIte1.upvoteComment(1);
+        salesIte1.upvoteComment(1);
+        salesIte1.upvoteComment(1);
+        Comment comment1 = salesIte1.findMostHelpfulComment();
+        assertEquals("me", comment1.getAuthor());
+        assertEquals(5, comment1.getVoteCount());
+    }
+
+    @Test
+    //question 20
+    public void testingAll()
+    {
+        SalesItem salesIte1 = new SalesItem("cherry", 450);
+        assertEquals(true, salesIte1.addComment("lucy", "meh", 3));
+        assertEquals("cherry", salesIte1.getName());
+        assertEquals(1, salesIte1.getNumberOfComments());
+        assertEquals(450, salesIte1.getPrice());
+    }
 }
+
+
 
 
 
