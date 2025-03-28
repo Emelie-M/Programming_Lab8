@@ -175,11 +175,19 @@ public class SalesItem
      */
     private Comment findCommentByAuthor(String author)
     {
-        for(Comment comment : comments) {
+        /*for(Comment comment : comments) {
             if(comment.getAuthor().equals(author)) {
                 return comment;
             }
+        }*/
+        Iterator<Comment> iterator = comments.iterator();
+        while(iterator.hasNext()){
+            Comment comment = iterator.next();
+            if (comment.getAuthor().equals(author)){
+                return comment;
+            }
         }
+        
         return null;
     }
     
